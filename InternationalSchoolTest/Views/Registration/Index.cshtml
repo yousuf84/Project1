@@ -1,0 +1,86 @@
+﻿@model DataAccess.Models.Student
+@{
+    ViewBag.Title = "Registration";    
+}
+<h2>
+    Registration</h2>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<div class="container">
+@using (Html.BeginForm("Index", "Registration", FormMethod.Post, new { id = "contact-form" }))
+{
+    <fieldset style="width: 900px;">
+        <div class="control-group">            
+            <label class="control-label" for="FirstName" style="width: 300px;">
+                Your Given Name</label>
+            <span class="controls" style="display: inline-block; width: 300px;">
+                <input type="text" class="input-xlarge" name="FirstName" id="FirstName" value="@Model.FirstName" >
+            </span>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="LastName">
+                Your SurName</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="LastName" id="LastName" value="@Model.LastName" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="FatherName">
+                Father Name</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="FatherName" id="FatherName" value="@Model.FatherName" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="SchoolName">
+                School Name</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="SchoolName" id="SchoolName" value="@Model.SchoolName" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="DateOfBirth">
+                Date Of Birth</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="DateOfBirth" id="DateOfBirth" value="@Model.DateOfBirth" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="Mobile">
+                Mobile Number</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="Mobile" id="Mobile" value="@Model.Mobile" >
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="EmailID">
+                Email ID</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" name="EmailID" id="EmailID" value="@Model.EmailID" >
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <label class="control-label" for="message">
+                Upload Photo</label>
+            <div class="controls">
+            	<input type="file" id="photo" name="photo" class='required error' />
+            </div>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-large">
+                Submit</button>
+            <button class="btn">
+                Cancel</button>
+        </div>
+    </fieldset>
+}
+
+</div>
+
+<div id="StudentDetailsData" style="visibility: hidden; display: none">
+    @Html.Raw(Json.Encode(Model));
+</div>
+

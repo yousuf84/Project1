@@ -1,0 +1,62 @@
+﻿  <div>
+        <table id="jqTable" class="scroll"></table>
+        <div id="jqTablePager" />
+    </div>
+
+    <script type="text/javascript">
+        // the url to 
+        var jqDataUrl = "/Registration/BatchUpload";
+        $(document).ready(function () {
+
+            // Set up the jquery grid
+            $("#jqTable").jqGrid({
+                // Ajax related configurations
+                url: jqDataUrl,
+                datatype: "json",
+                mtype: "POST",
+
+                // Specify the column names
+                colNames: ["FirstName", "LastName", "SchoolName", "DateOfBirth", "Mobile", "EmailID", "FatherName", "StreetAddress1", "StreetAddress2", "City", "State", "PinCode", "ErrorMsg"],
+
+                // Configure the columns
+                colModel: [
+            { name: "ErrorMsg", index: "ErrorMsg", width: 100, align: "left" },
+            { name: "FirstName", index: "FirstName", width: 100, align: "left" },
+            { name: "LastName", index: "LastName", width: 200, align: "left" },
+            { name: "SchoolName", index: "SchoolName", width: 100, align: "left" },
+            { name: "DateOfBirth", index: "DateOfBirth", width: 50, align: "left" },
+            { name: "Mobile", index: "Mobile", width: 50, align: "left" },
+            { name: "EmailID", index: "EmailID", width: 100, align: "left" },
+            { name: "FatherName", index: "FatherName", width: 100, align: "left" },
+            { name: "StreetAddress1", index: "StreetAddress1", width: 100, align: "left" },
+            { name: "StreetAddress2", index: "StreetAddress2", width: 100, align: "left" },
+            { name: "City", index: "City", width: 100, align: "left" },
+            { name: "State", index: "State", width: 100, align: "left" },
+            { name: "PinCode", index: "PinCode", width: 100, align: "left" }
+            ],
+
+                // Grid total width and height
+                width: 1000,
+
+                // Paging
+                toppager: true,
+                pager: $("#jqTablePager"),
+                rowNum: 5,
+                rowList: [5, 10, 20],
+                viewrecords: true, // Specify if "total number of records" is displayed
+
+                // Default sorting
+                sortname: "LastName, FirstName",
+                sortorder: "asc",
+
+                // Grid caption
+                caption: "Details "
+            }).navGrid("#jqTablePager",
+            { refresh: true, add: false, edit: false, del: false },
+                {}, // settings for edit
+                {}, // settings for add
+                {}, // settings for delete
+                {sopt: ["cn"]} // Search options. Some options can be set on column level
+         );
+        });
+</script>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "ExcelUpload";
+}
+
+<h2>Student Registrations Upload</h2>
+@using (Html.BeginForm("ExcelUpload", "Registration", FormMethod.Post, new { id = "RegistrationUpload-form", @enctype = "multipart/form-data" }))
+{
+ 
+ <div class="control-group">
+     <label class="control-label" for="message">
+                Upload</label>
+     <div class="controls">
+          <input type="file" id="uploadFile" name="uploadFile" class='required error' />
+     </div>
+ </div>
+  <div class="form-actions">
+       <button type="submit" class="btn btn-primary btn-large">
+           Upload</button>
+   </div>
+    <div>
+    @if (ViewData["BatchID"] != null)
+    {
+        @Html.Hidden("BatchID", ViewData["BatchID"]);
+       @Html.Partial("ViewBatch", null);
+
+    }
+    </div>
+    
+}
+

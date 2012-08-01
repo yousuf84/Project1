@@ -1,0 +1,13 @@
+c:\users\amohammed\documents\visual studio 2010\Projects\DataAccess\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+c:\users\amohammed\documents\visual studio 2010\Projects\DataAccess\DataAccess\bin\Debug\DataAccess.dll
+c:\users\amohammed\documents\visual studio 2010\Projects\DataAccess\DataAccess\bin\Debug\DataAccess.pdb
+c:\users\amohammed\documents\visual studio 2010\Projects\DataAccess\DataAccess\obj\Debug\DataAccess.dll
+c:\users\amohammed\documents\visual studio 2010\Projects\DataAccess\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\yousuf.MBE\Documents\Visual Studio 2010\Projects\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\yousuf.MBE\Documents\Visual Studio 2010\Projects\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\yousuf.MBE\Documents\Visual Studio 2010\Projects\InternationalSchoolTest\DataAccess\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\yousuf.MBE\Documents\Visual Studio 2010\Projects\InternationalSchoolTest\DataAccess\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\obj\Debug\DataAccess.pdb
