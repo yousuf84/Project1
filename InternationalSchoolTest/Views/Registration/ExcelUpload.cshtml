@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "ExcelUpload";
+    ViewBag.Title = "Upload";
 }
 
 <h2>Student Registrations Upload</h2>
@@ -17,14 +17,14 @@
        <button type="submit" class="btn btn-primary btn-large">
            Upload</button>
    </div>
+    }
+
     <div>
     @if (ViewData["BatchID"] != null)
     {
-        @Html.Hidden("BatchID", ViewData["BatchID"]);
-       @Html.Partial("ViewBatch", null);
-
+        @Html.Hidden("BatchID", ViewData["BatchID"])
+        @Html.Partial("ViewBatch", ViewData["BatchID"])
     }
     </div>
     
-}
 

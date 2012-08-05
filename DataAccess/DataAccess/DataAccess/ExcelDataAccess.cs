@@ -35,7 +35,7 @@ namespace DataAccess
                     strConn = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + strPath + ";" + "Extended Properties=\"Excel 8.0;HDR=YES\"";
                 }
                 System.Data.OleDb.OleDbDataAdapter myData = new System.Data.OleDb.OleDbDataAdapter("SELECT * FROM [" + GetExcelSheetNames(strPath, blnXslx)[0] + "];", strConn);
-                //myData.TableMappings.Add("Table", "ExcelTest")
+             //   myData.TableMappings.Add("Table", "ExcelTest");
                 myData.Fill(myDataset);
                 return myDataset;
 

@@ -36,6 +36,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationService\AdminService.cs" />
+    <Compile Include="ApplicationService\ExportToWord.cs" />
     <Compile Include="ApplicationService\StudentRegistrationUploadService.cs" />
+    <Compile Include="ApplicationService\StudentSearchService.cs" />
     <Compile Include="DataAccess\AdminDataAccess.cs" />
     <Compile Include="DataAccess\DataAccessBase.cs" />
     <Compile Include="DataAccess\ExcelDataAccess.cs" />
+    <Compile Include="DataAccess\HallTicketDataAccess.cs" />
     <Compile Include="DataAccess\ITTDataAccess.cs" />
     <Compile Include="DataAccess\RegistrationUploadDataAccess.cs" />
     <Compile Include="Helper\FileType.cs" />

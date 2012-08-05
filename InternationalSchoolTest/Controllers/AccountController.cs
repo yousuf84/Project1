@@ -38,6 +38,7 @@ namespace InternationalSchoolTest.Controllers
                 if (AdminService.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    User.IsInRole("Admin");
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -64,7 +65,7 @@ namespace InternationalSchoolTest.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

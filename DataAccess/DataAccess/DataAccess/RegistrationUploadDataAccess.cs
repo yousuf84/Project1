@@ -28,12 +28,10 @@ namespace DataAccess
 
             int startIndex = (page - 1) * pageSize;
             int endIndex = page * pageSize;
-            string sql = @"WITH PAGED_RegistrationUploads AS (SELECT *, ROW_NUMBER() OVER (ORDER BY " + sidx + @" " + sord + @") AS RowNumber 
-                    FROM RegistrationUploads WHERE BatchID = @BatchID ) SELECT FirstName,LastName,SchoolName,DateOfBirth,Mobile,
-                    EmailID,FatherName,StreetAddress1,StreetAddress2,City,State,PinCode, ErrorMsg 
-                 FROM PAGED_RegistrationUploads WHERE RowNumber BETWEEN " + startIndex + @" AND " + endIndex + @";";                       
-            return ExecuteSelect(sql, new SqlParameter[] { new SqlParameter("@BatchID", iBatchID) }, CommandType.Text);
-
+            return ExecuteSelect("spN_sel_RegistrationUploads", new SqlParameter[] { new SqlParameter("@sidx", sidx), new SqlParameter("@sord", sord), 
+                                     new SqlParameter("@BatchId", iBatchID), new SqlParameter("@startindex", startIndex), new SqlParameter("@endIndex", endIndex)}, 
+                                     CommandType.StoredProcedure);
+            
         }
 
         public int GetTotalCount(int iBatchID)
@@ -71,5 +69,19 @@ namespace DataAccess
                return (int)dt.Rows[0][0] + 1;
            }
         }
+
+        public DataTable Search(string StudentGivenName, string StudentSurName, string FatherName, string SchoolName, int pageSize, int page, string sidx, string sord)
+        {
+
+            int startIndex = (page - 1) * pageSize;
+            int endIndex = page * pageSize;
+            return ExecuteSelect("spN_sel_SearchStudent", new SqlParameter[] { new SqlParameter("@sidx", sidx), new SqlParameter("@sord", sord), 
+                                        new SqlParameter("@startindex", startIndex), new SqlParameter("@endIndex", endIndex), 
+                                        new SqlParameter("@StudentGivenName", StudentGivenName), new SqlParameter("@StudentSurName", StudentSurName),
+                                        new SqlParameter("@FatherName", FatherName), new SqlParameter("@SchoolName", SchoolName)},
+                                        CommandType.StoredProcedure);
+
+        }
+
     }
 }

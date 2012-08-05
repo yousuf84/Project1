@@ -565,7 +565,9 @@
     <Content Include="Scripts\src\jqModal.js" />
     <Content Include="Scripts\src\jquery.fmatter.js" />
     <Content Include="Scripts\src\JsonXml.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -620,6 +622,8 @@
     <None Include="jquery-ui-1.8.12.custom\development-bundle\themes\OneNote Table Of Contents.onetoc2" />
     <None Include="jquery-ui-1.8.12.custom\development-bundle\ui\OneNote Table Of Contents.onetoc2" />
     <Content Include="Views\Registration\ViewBatch.cshtml" />
+    <Content Include="Views\Registration\PrintHallTicket.cshtml" />
+    <Content Include="Views\Registration\Search.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
