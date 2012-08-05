@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAccess
 {
-    class Test
+    class NewTestClass
     {
     }
 }
