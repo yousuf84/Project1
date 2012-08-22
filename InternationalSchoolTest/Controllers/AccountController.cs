@@ -45,7 +45,15 @@ namespace InternationalSchoolTest.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        if (model.UserName == "admin")
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Default", "Home");
+                        }
+
                     }
                 }
                 else

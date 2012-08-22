@@ -14,7 +14,7 @@ namespace DataAccess
 
         public bool ValidateUser(string UserName, string Password)
         {
-             DataTable dt = ExecuteSelect("SELECT * FROM admins where UserName=@UserName AND Password=@Password", new SqlParameter[]{
+            DataTable dt = ExecuteSelect("SELECT * FROM AccountLogins where UserName=@UserName AND Password=@Password", new SqlParameter[]{
                     CreateParameter("@UserName", SqlDbType.NVarChar, UserName),
                     CreateParameter("@Password", SqlDbType.NVarChar, Password)}, CommandType.Text);
              if (dt.Rows.Count > 0)

@@ -122,11 +122,13 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PracticeTestController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\JSONHelper.cs" />
+    <Compile Include="Infrastructure\CustomAuthorization.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -192,6 +194,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\error.png" />
+    <Content Include="Images\face-smiley.gif" />
     <Content Include="Images\valid.png" />
     <Content Include="JQGridAdditionalResources\JQGridImages\filter_icon.png" />
     <Content Include="JQGridAdditionalResources\JQGridImages\hideCol.png" />
@@ -624,6 +627,10 @@
     <Content Include="Views\Registration\ViewBatch.cshtml" />
     <Content Include="Views\Registration\PrintHallTicket.cshtml" />
     <Content Include="Views\Registration\Search.cshtml" />
+    <Content Include="Views\Home\Default.cshtml" />
+    <Content Include="Views\PracticeTest\Index.cshtml" />
+    <Content Include="Views\PracticeTest\PracticeTestComplete.cshtml" />
+    <Content Include="Views\PracticeTest\Upload.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

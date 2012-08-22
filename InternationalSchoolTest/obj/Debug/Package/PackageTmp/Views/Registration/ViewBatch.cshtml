@@ -1,0 +1,111 @@
+﻿@using (Html.BeginForm("PrintHallTicket", "Registration", FormMethod.Post, new { id = "PrintHallTicket-form", @enctype = "multipart/form-data" }))
+{
+ 
+  <div>
+        <table id="jqTable" class="scroll"></table>
+        <div id="jqTablePager" />'
+        <input type="hidden" id="hfSelectedRows" name="hfSelectedRows" />
+         <button type="submit" class="btn btn-primary btn-large" onclick="SetHiddenField();">
+           Print Hall Ticket</button>
+    <br /><br />
+    </div>
+
+    <script type="text/javascript">
+        // the url to
+        var jqDataUrl = "/Registration/BatchUpload";
+        var rowsToColor = [];
+        var rowsToSelect = [];
+        var selectedRows = '';
+        $(document).ready(function () {
+
+            // Set up the jquery grid
+            $("#jqTable").jqGrid({
+                url: jqDataUrl,
+                datatype: "json",
+                mtype: "POST",
+                colNames: ["ErrorMsg", "FirstName", "LastName", "SchoolName", "DateOfBirth", "Mobile", "EmailID", "FatherName", "StreetAddress1", "StreetAddress2", "City", "State", "PinCode", "RegistrationUploadID", "StudentID"],
+                colModel: [
+                    { name: "ErrorMsg", index: "ErrorMsg", width: 150, align: "left", formatter: rowColorFormatter },
+                    { name: "FirstName", index: "FirstName", width: 100, align: "left" },
+                    { name: "LastName", index: "LastName", width: 100, align: "left" },
+                    { name: "SchoolName", index: "SchoolName", width: 100, align: "left" },
+                    { name: "DateOfBirth", index: "DateOfBirth", width: 80, align: "left" },
+                    { name: "Mobile", index: "Mobile", width: 80, align: "left" },
+                    { name: "EmailID", index: "EmailID", width: 200, align: "left" },
+                    { name: "FatherName", index: "FatherName", width: 100, align: "left" },
+                    { name: "StreetAddress1", index: "StreetAddress1", width: 200, align: "left" },
+                    { name: "StreetAddress2", index: "StreetAddress2", width: 200, align: "left" },
+                    { name: "City", index: "City", width: 150, align: "left" },
+                    { name: "State", index: "State", width: 100, align: "left" },
+                    { name: "PinCode", index: "PinCode", width: 100, align: "left" },
+                    { name: "RegistrationUploadID", index: "RegistrationUploadID", width: 100, align: "left", visible: false },
+                    { name: "StudentID", index: "StudentID", width: 100, align: "left", visible: false }
+                    
+            ],
+                width: 1000,
+                toppager: true,
+                pager: $("#jqTablePager"),
+                rowNum: 5000,
+                height: 300,
+                rowList: [5, 10, 20],
+                viewrecords: true, // Specify if "total number of records" is displayed
+                multiselect: true,
+                // Default sorting
+                sortname: "LastName, FirstName",
+                sortorder: "asc",
+
+                // Grid caption
+                caption: "Details ",              
+                loadComplete: function (data) {
+                    for (var i = 0; i < rowsToSelect.length; i++) {
+                        jQuery("#jqTable").setSelection(rowsToSelect[i], true);
+                    }
+
+                    var grid1 = $("#jqTable");
+                    var ids1 = grid1.getDataIDs();
+                    for (var i = 0; i < ids1.length; i++) {
+                        grid1.setRowData(ids1[i], false, { height: 20 + i * 2 });
+                    }
+                },
+
+                gridComplete: function () {
+                    for (var i = 0; i < rowsToColor.length; i++) {
+                        $("#" + rowsToColor[i]).find("td").css("color", "red");
+                        $("#jqg_" + rowsToColor[i], "#jqTable").attr("disabled", true);
+                    }
+
+                }
+            }).navGrid("#jqTablePager",
+            { refresh: true, add: false, edit: false, del: false },
+                {}, // settings for edit
+                {}, // settings for add
+                {}, // settings for delete
+                {sopt: ["cn"]} // Search options. Some options can be set on column level
+         );
+           
+
+        });
+        function rowColorFormatter(cellValue, options, rowObject) {
+            if (cellValue != "")
+            {
+                rowsToColor[rowsToColor.length] = options.rowId;
+
+            } else {
+            rowsToSelect[rowsToSelect.length] = options.rowId;
+                }
+            return cellValue;
+        }
+        function SetHiddenField() {
+
+        var lista = jQuery("#jqTable").getDataIDs();
+         for(i=0; i < lista.length; i++){
+             rowData = jQuery("#jqTable").getRowData(lista[i]);
+             selectedRows = selectedRows + rowData.StudentID + ',';
+         }
+         $('#hfSelectedRows').val(selectedRows);
+         alert($('#hfSelectedRows').val());
+
+            return true;
+        }
+</script>
+}

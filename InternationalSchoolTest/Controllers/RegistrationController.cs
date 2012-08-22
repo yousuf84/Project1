@@ -17,7 +17,6 @@ namespace InternationalSchoolTest.Controllers
             return View(new Student());
         }
 
-        [Authorize(Roles = "Admin")]
         public ActionResult ExcelUpload()
         {
             return View();

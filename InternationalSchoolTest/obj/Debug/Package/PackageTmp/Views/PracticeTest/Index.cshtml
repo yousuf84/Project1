@@ -1,0 +1,82 @@
+﻿@model DataAccess.Models.Question
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("NextQuestion", "PracticeTest", FormMethod.Post, new { id = "PracticeTest-form", @enctype = "multipart/form-data" }))
+{
+ 
+<div class="question-box">
+    <div id="QuestionArea">
+           @Model.Text
+         <div id="OptionsArea" style="display: none;">
+            <label>@Model.QuestionSolution.Solution</label>
+        </div>
+    </div>
+    <div id="AnswerArea">
+    <div class="info-box">
+        <div class="info-box-header">
+            Answer
+        </div>
+        <div id="solutionarea">
+            <ul style="list-style: none;">
+                        @foreach (DataAccess.Models.QuestionChoice choice in Model.QuestionChoices)
+                        {
+                <li>
+                    <label>
+                        <input type="radio" name="rdoChoice" value="@choice.Choice" style="width: 10%;" /><span class="value">@choice.Text</span>
+                    </label>
+                </li>
+                        }       
+
+            </ul>
+        </div>
+        <div class="answer-buttons">
+				<input type="button" class="simple-button green" id="check-answer-button" value="Check Answer" style="width: 200px;" disabled="disabled">				
+                    <input type="submit" class="simple-button green" id="next-question-button" style="display: none; width: 200px;" name="correctnextbutton" value="Correct! Next Question...">
+				<div id="positive-reinforcement" style="display: none; "><img src="../../Images/face-smiley.gif"></div>
+
+				<span id="show-solution-button-container"></span>
+				<div id="check-answer-results"><p class="check-answer-message info-box-sub-description"></p></div>
+		</div>
+
+
+    </div>
+            <div class="info-box hint-box" style="top: 0px; ">
+				<span class="info-box-header" style="">Need help?</span>
+				<div id="get-hint-button-container">			
+				<input id="hint" type="button" class="simple-button orange full-width" value="I'd like a hint" name="hint" style="width: 200px;"></div>
+				<span id="hint-remainder"></span>
+		</div>
+
+    </div>
+    <input type="hidden" value="@Model.QuestionSolution.Choice" id="hfChoice" />
+    <input type="hidden" name="QuestionID" value="@Model.QuestionID" />
+</div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#check-answer-button").click(function () {
+            if ($("input:radio[name='rdoChoice']:checked").val() == $("#hfChoice").val()) {
+                // $("#positive-reinforcement").show();
+                $(this).hide();
+                $("#next-question-button").show();
+                $("input:radio[name='rdoChoice']").attr('disabled', true);
+                $("#OptionsArea").show();
+            } else {
+                $(this).val('Try Again');
+                $(this).effect("shake", { times: 2, distance: 5 }, 50);
+            }
+
+        });
+
+        $("input:radio[name='rdoChoice']").click(function () {
+            $("#check-answer-button").attr('disabled', false);
+        });
+
+        $("#hint").click(function () {
+            $("#OptionsArea").show();
+        });
+
+
+    });
+</script>

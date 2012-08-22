@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+@using (Html.BeginForm("Search", "Registration", FormMethod.Post, new { id = "Search-form" }))
+{
+ 
+ <div class="control-group">
+     <label class="control-label" for="message" style="width: 150px; display: inline-block;">
+                Student Given Name</label>
+     <span class="controls" style="width: 250px; display: inline-block;">
+         @Html.TextBox("StudentGivenName", (String)ViewData["StudentGivenName"])
+     </span>
+      <label class="control-label" for="message" style="width: 150px; display: inline-block;">
+                Student Sur Name</label>
+     <span class="controls" style="width: 250px; display: inline-block;">
+         @Html.TextBox("StudentSurName", (String)ViewData["StudentSurName"])
+     </span>
+ </div>
+ <div class="control-group">
+     <label class="control-label" for="message" style="width: 150px; display: inline-block;">
+                Father Name</label>
+     <span class="controls" style="width: 250px; display: inline-block;">
+         @Html.TextBox("FatherName", (String)ViewData["FatherName"])
+     </span>
+      <label class="control-label" for="message" style="width: 150px; display: inline-block;">
+                School Name</label>
+     <span class="controls" style="width: 250px; display: inline-block;">
+         @Html.TextBox("SchoolName", (String)ViewData["SchoolName"])
+     </span>
+ </div>
+    
+  <div class="form-actions" align="right" style="width: 800px;">
+       <button type="submit" class="btn btn-primary btn-large">
+           Search</button>
+   </div>
+    }
+    <div>
+    @if (ViewData["SearchComplete"] != null)
+    {
+        @Html.Partial("ViewBatch", null)
+    }
+    </div>
+    
+

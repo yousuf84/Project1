@@ -18,3 +18,14 @@ C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTe
 C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\System.Web.Http.xml
 C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\yousuf.MBE\Desktop\InternationalSchoolTest_latest\InternationalSchoolTest\DataAccess\DataAccess\bin\Debug\System.Net.Http.xml
+C:\GitRepository\Project1\DataAccess\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\DataAccess.dll
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\DataAccess.pdb
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Web.Http.dll
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Net.Http.Formatting.dll
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Net.Http.dll
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Web.Http.xml
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Net.Http.Formatting.xml
+C:\GitRepository\Project1\DataAccess\DataAccess\bin\Debug\System.Net.Http.xml
+C:\GitRepository\Project1\DataAccess\DataAccess\obj\Debug\DataAccess.dll
+C:\GitRepository\Project1\DataAccess\DataAccess\obj\Debug\DataAccess.pdb

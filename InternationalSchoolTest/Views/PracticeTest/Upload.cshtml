@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+
+
+@using (Html.BeginForm("Upload", "PracticeTest", FormMethod.Post, new { id = "PracticeTest-form", @enctype = "multipart/form-data" }))
+{
+ <div class="control-group">
+     <label class="control-label" for="message">
+                Select Class</label>
+     <div class="controls">
+            <select name="SchoolClass">
+                <option value="7">7th Class</option>
+                <option value="8">8th Class</option>
+                <option value="9">9th Class</option>
+                <option value="10">10th Class</option>
+            </select>
+     </div>
+ </div>
+ 
+ <div class="control-group">
+     <label class="control-label" for="message">
+                Upload</label>
+     <div class="controls">
+          <input type="file" id="uploadFile" name="uploadFile" class='required error' />
+     </div>
+ </div>
+  <div class="form-actions">
+       <button type="submit" class="btn btn-primary btn-large">
+           Upload</button>
+   </div>
+    
+}
+ <div>
+    @if (ViewData["PracticeTestUploadMessage"] != null)
+    {
+        <label for"message">@ViewData["PracticeTestUploadMessage"]</label>
+    }
+    </div>
+    

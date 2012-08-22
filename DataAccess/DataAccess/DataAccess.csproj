@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ApplicationService\AdminService.cs" />
     <Compile Include="ApplicationService\ExportToWord.cs" />
+    <Compile Include="ApplicationService\MockTestApplicationService.cs" />
+    <Compile Include="ApplicationService\PracticeTestService.cs" />
     <Compile Include="ApplicationService\StudentRegistrationUploadService.cs" />
     <Compile Include="ApplicationService\StudentSearchService.cs" />
     <Compile Include="DataAccess\AdminDataAccess.cs" />
@@ -53,9 +55,14 @@
     <Compile Include="DataAccess\ExcelDataAccess.cs" />
     <Compile Include="DataAccess\HallTicketDataAccess.cs" />
     <Compile Include="DataAccess\ITTDataAccess.cs" />
+    <Compile Include="DataAccess\MockTestUploadDataAccess.cs" />
+    <Compile Include="DataAccess\QuestionDataAccess.cs" />
     <Compile Include="DataAccess\RegistrationUploadDataAccess.cs" />
     <Compile Include="Helper\FileType.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionChoice.cs" />
+    <Compile Include="Models\QuestionSolution.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
